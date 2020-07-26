@@ -1,4 +1,4 @@
-const error = require('./Middleware/error');
+const error = require('./Middleware/error'); //calling the middleware function
 const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
@@ -28,7 +28,8 @@ app.use('/api/genre', genre);
 app.use('/api/user', userProfile);
 app.use('/api/register', registerUser);
 app.use('/api/auth', auth);
-app.use(error);
+
+app.use(error); //the error middleware stored on the last
   
 const port = 3000
 app.listen(port, () => {

@@ -10,7 +10,7 @@ router.get('/', auth, async (request, response, next) => { //to fetch all data
         const manga = await Manga.find().sort('name');
         response.send(manga);
     } catch(ex){
-        next(ex);
+        next(ex);//sending an error to the next route, check app.js on line 31 the route will automatically pass into the error middleware because it is sotred on the last route after all of the routes.
     }
 });
 
